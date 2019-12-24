@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "maps-395be": {
+      "hosting": {
+        "maps": [
+          "maps-395be"
+        ]
+      }
+    }
+  }
+}

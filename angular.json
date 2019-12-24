@@ -122,8 +122,13 @@
               "devServerTarget": "maps:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "maps"
 }
