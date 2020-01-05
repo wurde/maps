@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map',
@@ -6,23 +7,29 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit {
+  private map;
+
   constructor() {}
 
   ngAfterViewInit() {
-    console.log('init');
+    this.initMap();
+
     const tiles = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        maxZoom: 19,
+        maxZoom: 11,
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }
     );
 
-    tiles.addTo(mymap);
+    tiles.addTo(this.map);
   }
 
   private initMap(): void {
-    this.map = L.map('map').setView([51.505, -0.09], 13);
+    this.map = L.map('map', {
+      center: [30.274722, -97.740556],
+      zoom: 13
+    });
   }
 }

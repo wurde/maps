@@ -1,6 +1,9 @@
-@import "~leaflet/dist/leaflet.css";
-
 .map-card {
   margin: 5px;
-  height: 200px;
+  padding: 0px;
+  height: 80vh;
+}
+
+#map {
+  height: 100%;
 }
