@@ -15,9 +15,15 @@ import * as L from 'leaflet';
 })
 export class MapComponent implements AfterViewInit {
   @Output() mapInitEvent = new EventEmitter();
+  map;
 
   ngAfterViewInit() {
-    this.initMap();
+    this.map = L.map('map', {
+      center: [30.274722, -97.740556],
+      zoom: 11
+    });
+
+    this.mapInitEvent.emit(this.map);
 
     const tiles = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -29,14 +35,5 @@ export class MapComponent implements AfterViewInit {
     );
 
     tiles.addTo(this.map);
-  }
-
-  private initMap(): void {
-    this.map = L.map('map', {
-      center: [30.274722, -97.740556],
-      zoom: 11
-    });
-
-    this.mapInitEvent.emit(this.map);
   }
 }

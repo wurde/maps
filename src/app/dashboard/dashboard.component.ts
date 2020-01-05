@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   map = {};
 
+  ngOnInit() {};
+
   receiveMapInit(event) {
     this.map = event;
   }
