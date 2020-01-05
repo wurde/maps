@@ -2,7 +2,7 @@
  * Assertions
  */
 
-describe("Sample", () => {
+describe("Map", () => {
   it.skip("has a set of Controls")
   // TODO check MyLocation button exists.
 
