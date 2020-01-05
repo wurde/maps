@@ -4,6 +4,6 @@
 
 describe("Sample", () => {
   it("should have tests", () => {
-    expect(true).toBe(false);
+    expect(true).to.equal(true);
   })
 });

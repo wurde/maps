@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "cypress run",
-    "cypress:open": "cypress open",
+    "test": "start-server-and-test start http://localhost:4200 cy:run",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
     "lint": "ng lint"
   },
   "private": true,
@@ -55,10 +56,10 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "ng-packagr": "^5.4.0",
     "protractor": "~5.4.0",
+    "start-server-and-test": "^1.10.6",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3",
-    "wait-on": "^3.3.0"
+    "typescript": "~3.5.3"
   }
 }
