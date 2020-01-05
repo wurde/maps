@@ -1,4 +1,4 @@
 <main>
-  <app-controls></app-controls>
-  <app-map></app-map>
+  <app-controls [map]="map"></app-controls>
+  <app-map (mapInitEvent)="receiveMapInit($event)"></app-map>
 </main>

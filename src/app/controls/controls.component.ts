@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-controls',
   templateUrl: './controls.component.html',
   styleUrls: ['./controls.component.scss']
 })
-export class ControlsComponent implements OnInit {
-  constructor() {}
+export class ControlsComponent implements AfterViewInit {
+  @Input() map;
+  hasGeolocation = false;
 
-  ngOnInit() {}
+  constructor() {
+    this.hasGeolocation = navigator.geolocation ? true : false;
+  }
 
   locate_me() {
-    alert('TODO');
+    this.map.locate({ setView: true, maxZoom: 15 });
   }
 }

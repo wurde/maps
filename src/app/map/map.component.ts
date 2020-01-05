@@ -1,4 +1,11 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit
+} from '@angular/core';
+
 import * as L from 'leaflet';
 
 @Component({
@@ -7,9 +14,7 @@ import * as L from 'leaflet';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit {
-  private map;
-
-  constructor() {}
+  @Output() mapInitEvent = new EventEmitter();
 
   ngAfterViewInit() {
     this.initMap();
@@ -31,5 +36,7 @@ export class MapComponent implements AfterViewInit {
       center: [30.274722, -97.740556],
       zoom: 11
     });
+
+    this.mapInitEvent.emit(this.map);
   }
 }
