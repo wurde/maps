@@ -1,0 +1,9 @@
+<header>
+  <mat-toolbar class="controls-toolbar">
+    <mat-toolbar-row>
+      <button *ngIf="hasGeolocation" id="locate-me-btn" mat-icon-button color="primary" (click)="locate_me()">
+        <mat-icon aria-hidden="false" aria-label="Locate me icon">location_searching</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

@@ -1,0 +1,8 @@
+main {
+  margin: 0 auto;
+  padding: 5px;
+
+  @media (min-width: 800px) {
+    width: 80%;
+  }
+}
